@@ -24,7 +24,7 @@ document.getElementById("collectButton").addEventListener('click', function() {
     const currentPageData = chrome.tabs.query({ active: true, currentWindow: true });
     currentPageData.then(data => {
         const webpageInfo = data[0];
-        const webpageTitle = webpageInfo.title;
+        const webpageTitle = webpageInfo.title.replace(/,/g, '-');
         const webpageUrl = webpageInfo.url;
         document.getElementById("pageName").innerHTML = "Page Title: ".concat(webpageTitle);
         document.getElementById("pageUrl").innerHTML = "Page URL: ".concat(webpageUrl);
