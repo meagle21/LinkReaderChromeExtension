@@ -1,0 +1,22 @@
+{
+    "name": "Link Recorder",
+    "version": "1.0.0",
+    "description": "Extension can be used to record links for the user to reference later.",
+    "manifest_version": 3,
+    "action": {"default_icon": {
+            "32": "images/extension_icon.png"
+        },
+        "default_title": "Link Reader",
+        "default_popup": "gui.html"
+    },
+    "permissions" : ["activeTab", "downloads", "storage", "sync"],
+    "content_scripts": [
+        {
+            "matches": ["https://*.example.com/*"],
+            "js" : ["js/getUrlInfo.js"]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    }
+}
