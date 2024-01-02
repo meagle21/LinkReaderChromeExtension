@@ -9,7 +9,7 @@
 1. Download this project to a local folder on your computer.
 2. Go into your Google Chrome client
 3. Find the Extensions icon (looks like a puzzle piece) and select it. In this dropdown at the bottom you will see, "Manage extensions" select that option.
-4. Eensure that "Developer Mode" is switched to "On" (you can find Developer Mode in the upper right corner).
+4. Ensure that "Developer Mode" is switched to "On" (you can find Developer Mode in the upper right corner).
 5. In the top left corner you should now see "Load unpacked" select that button and navigate to the folder you download the project to and click "Select Folder".
 6. Now you should see "Link Reader" as an extension amongst your other extensions if you have others.
 
