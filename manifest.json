@@ -9,7 +9,7 @@
         "default_title": "Link Reader",
         "default_popup": "gui.html"
     },
-    "permissions" : ["activeTab", "downloads", "storage", "sync"],
+    "permissions" : ["activeTab", "downloads", "storage"],
     "content_scripts": [
         {
             "matches": ["https://*.example.com/*"],
