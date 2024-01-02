@@ -16,3 +16,8 @@
 For ease of access, if you'd like the extension to be readily available:
 1. Find the Extensions icon and click it
 2. This time you should see Link Reader listed. To pin it (make it always visbible in the Extensions bar) selet the pin icon to the right of the extension name.
+
+## Notes for use:
+- To save a link to the database click "Save link"
+- To download the saved links to a .csv file click "Download saved links"
+- Once you have downloaded the saved links, the database of links will reset. This is so that the list of links doesn't get too long over time and so that the user doesn't have to do this manually.
