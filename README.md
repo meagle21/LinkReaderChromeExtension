@@ -21,3 +21,4 @@ For ease of access, if you'd like the extension to be readily available:
 - To save a link to the database click "Save link"
 - To download the saved links to a .csv file click "Download saved links"
 - Once you have downloaded the saved links, the database of links will reset. This is so that the list of links doesn't get too long over time and so that the user doesn't have to do this manually.
+- For an annotation to be included with your link, you must fill in the annotation prior to saving the link.
