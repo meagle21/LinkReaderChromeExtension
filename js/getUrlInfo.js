@@ -1,5 +1,5 @@
 
-const headers = "Website,URL,Save Time";
+const headers = "Website,URL,Annotation,Save Time";
 chrome.storage.sync.get({'savedData': headers}, function(result) {
     var existingData = result.savedData || { savedData: headers};
     chrome.storage.sync.set({'savedData': existingData}, function() {
@@ -17,19 +17,23 @@ document.getElementById("collectButton").addEventListener('click', function() {
     if(hours > 12){
         hours = hours - 12;
         var formattedDateTime = `${month}-${day}-${yearYY} ${hours}:${minutes} PM`;
+        var dateForGUI = `${hours}:${minutes} PM`;
     }
     else{
         var formattedDateTime = `${month}-${day}-${yearYY} ${hours}:${minutes} AM`;
+        var dateForGUI = `${hours}:${minutes} AM`;
     }    
     const currentPageData = chrome.tabs.query({ active: true, currentWindow: true });
     currentPageData.then(data => {
         const webpageInfo = data[0];
-        const webpageTitle = webpageInfo.title.replace(/,/g, '-');
+        var webpageTitle = webpageInfo.title;
+        if(webpageTitle.length > 0){
+            webpageTitle = webpageTitle.replace(/,/g, '-');
+        }
         const webpageUrl = webpageInfo.url;
-        document.getElementById("pageName").innerHTML = "Page Title: ".concat(webpageTitle);
-        document.getElementById("pageUrl").innerHTML = "Page URL: ".concat(webpageUrl);
-        document.getElementById("saveTime").innerHTML = "Save time: ".concat(formattedDateTime);
-        var csvContent = ''.concat(webpageTitle).concat(',').concat(webpageUrl).concat(',').concat(formattedDateTime);
+        const linkAnnotation = document.getElementById("annotation").value.replace(/,/g, '-');
+        document.getElementById("saveTime").innerHTML = "New link saved at: ".concat(dateForGUI);
+        var csvContent = ''.concat(webpageTitle).concat(',').concat(webpageUrl).concat(',').concat(linkAnnotation).concat(",").concat(formattedDateTime);
         chrome.storage.sync.get(['savedData'], function(result) {
             var existingData = result.savedData;
             var updatedContent = existingData.concat("\n").concat(csvContent);
