@@ -3,40 +3,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             body {
+                background-color: #00ccb6;
+                color: #1a2c47;
                 margin: 0;
                 width: 450px; 
                 height: 200px;
                 padding: 20px;
                 font-family: Arial, sans-serif;
-                background-color: #00ccb6;
-                color: #1a2c47;
                 flex-direction: column;
-                justify-content: space-between;
             }
             button {
+                position: relative;
                 width: 200px; 
                 height: 30px; 
                 font-size: 16px;
                 background-color: #1a2c47;
                 color: white;
                 position: fixed;
+                left: 20px;
+            }
+            textarea {
+                position: absolute;
+                top: 35px;
+                right: 40px;
+                width: 200px;
+                height: 100px;
+                font-family: Arial, sans-serif;
+                box-sizing: border-box;
+            }
+            .pageName {
+                position: absolute;
+                top: 50px;
+                left: 100px;
+            }
+            .saveTime {
+                position: absolute;
+                top: 80px;
+                left: 100px;
+            }
+            h2 {
+                position: absolute;
+                top: 2px;
+                right: 101px;
             }
         </style>
     </head>
     <body>
-        <table>
-            <tr>
-                <td id = "pageName">Page Title:</td>
-            </tr>
-            <tr>
-                <td id = "pageUrl">Page URL:</td>
-            </tr>
-            <tr>
-                <td id = "saveTime">Save time:</td>
-            </tr><br>
-        </table>
+        <h3 id = "saveTime">New link saved at:</h3>
         <button id="collectButton">Save link</button><br><br><br>
         <button id="linkDownloader">Download saved links</button>
+        <div>
+            <h2>Link annotation:</h2>
+            <textarea type="text" id="annotation" name="annotation"></textarea>
+        </div>
     </body>
     <script src="js/getUrlInfo.js"></script>
 </html>
