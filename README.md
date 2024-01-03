@@ -3,6 +3,7 @@
 ## Introduction
 
 ### This project is a Google Chrome extension that allows you to save the Website name and the URL of links that of interest to you. This project works for any and all links, ranging from scientific aricles to interesting images. The extension will store all links in memory until the user has completed their research for the time being and downloads the images. The extension will dump all links into a Comma Separate Value file (.csv) and allows the user to create their own name and store the file anywhere on their local computer. The extension responds in real time to the user to let the user know they have successfully added a link to storage.
+![Example of the Google Chrome Extension](images/extension.png)
 
 ## To run the extension, please complete the following steps:
 1. Download this project to a local folder on your computer.
